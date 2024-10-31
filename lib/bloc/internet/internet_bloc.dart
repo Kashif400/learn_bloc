@@ -22,7 +22,7 @@ class InternetBloc extends Bloc<InternetEvent, InternetState> {
     connectivitySubscription =
         _connectivity.onConnectivityChanged.listen((result) {
       if (result.contains(ConnectivityResult.wifi) ||
-          result.contains(ConnectivityResult.wifi)) {
+          result.contains(ConnectivityResult.mobile)) {
         add(InternetGainedEvent()); // Connected to the internet
       } else {
         add(InternetLostEvent()); // No internet connection
